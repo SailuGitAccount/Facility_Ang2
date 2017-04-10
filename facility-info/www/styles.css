@@ -1,0 +1,35 @@
+body{
+	 font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	 font-size:16px; 
+	 margin-left: auto;
+	 margin-right: auto;
+	}
+label{
+	font-size:17px;
+	display:block;
+	margin-top:1.5em;
+}
+form label span{
+	color:red;
+}
+ul li{
+	list-style-type: none;
+}
+input{
+	border:none;
+	border-bottom:1px solid black;
+}
+.colored{
+	color:red;
+	font-size: 14px;
+}
+button{
+	border: 1px solid white;
+	padding:6px 20px !important;
+	margin-top: 1.5em;
+	border-radius: 0px !important;
+}
+.btn-primary:hover {
+	border-color: white; 
+	background-color: #2e6da4;
+}	

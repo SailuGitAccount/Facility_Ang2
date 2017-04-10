@@ -1,0 +1,1 @@
+export const string = "<h1 class=\"text-center\" style=\"color:white;background-color:#337ab7;padding:1em;\">Your Information is Submitted successfully.</h1>"

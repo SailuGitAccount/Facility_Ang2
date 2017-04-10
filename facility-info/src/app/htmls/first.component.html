@@ -1,0 +1,64 @@
+<h3 style="color:white;background-color:#337ab7;padding:1em;" (click)="fakeFill()">Facility Information</h3>
+<p>Please fillout the following questionnaire</p>
+<form #facility_form_first="ngForm" (ngSubmit)="submitMe()">
+    <label>Facility Name<span>*</span></label>
+    <p>
+        <input type="text" name="name" [(ngModel)]="first.name" #name="ngModel" required>
+    </p>
+    <div *ngIf="submitCount && !facilityName()" class="colored">
+        Please enter name of the facility
+    </div>
+    <label> Address<span>*</span></label>
+    <input type="text" name="street" [(ngModel)]="first.street" #street="ngModel" required>
+    <div *ngIf="submitCount && !facilityAddress()" class="colored">
+        Please enter name of the street
+    </div>
+    <label> Apartment Number</label>
+    <input type="text" name="apt_number" [(ngModel)]="first.apt_number" #apt_number="ngModel">
+
+    <label> City<span>*</span></label>
+        <input type="text" name="city" [(ngModel)]="first.city" #city="ngModel" required>
+
+    <div *ngIf="submitCount && !facilityCity()" class="colored">
+        Please enter name of the city
+    </div>
+    <label> State<span>*</span></label>
+    <!-- <input type="text" name="state" [(ngModel)]="first.state" #state="ngModel" required> -->
+    <select name="state" [(ngModel)]="first.state" #state="ngModel" required>
+          <option value="1">Please select a state</option>
+          <option value="2">NY</option>
+          <option value="3">NJ</option>
+          <option value="4">FL</option> 
+         <!--  <option *ngFor="let c of countries" value="c.name">{{c.name}}</option> -->
+    </select>
+
+ <!-- <select name="state" [(ngModel)]="first.state" #state="ngModel" required>
+        <option *ngFor="let st of states" [ngValue]="st.name" [selected]="st.name == 'back'">{{st.name}}</option>
+        <option *ngFor="let st of states1" [ngValue]="st.name">{{st.name}}</option>
+    </select>  -->
+
+
+    <div *ngIf="submitCount && !facilityState()" class="colored">
+        Please enter name of the state
+    </div>
+    <label> Zip Code<span>*</span></label>
+    <input type="text" name="zip" [(ngModel)]="first.zip" #zip="ngModel" placeholder="xxxxx" required>
+    <div *ngIf="submitCount && !isZipValid()" class="colored">
+        Please enter a valid zip
+    </div>
+    <label> Phone Number<span>*</span></label>
+    <input type="text" type="tel" name="phone" [(ngModel)]="first.phone" #phone="ngModel" placeholder="2222222222" required>
+    <div *ngIf="submitCount && !isPhoneValid()" class="colored">
+            Please enter a valid phone number
+     </div>
+    <label> Email<span>*</span></label>
+    <input type="email" name="email" [(ngModel)]="first.email" #email="ngModel" required>
+    <div *ngIf="submitCount && !isEmailValid()" class="colored">
+            Please enter a valid email
+    </div>
+    <label>Website</label>
+    <input type="text" name="website" [(ngModel)]="first.website" #website="ngModel" pattern="https?://.+" placeholder="http://www.google.com">
+    <div *ngIf="submitCount && !isWebsiteValid()" class="colored">
+            Please enter a valid Website
+    </div>
+</form>
